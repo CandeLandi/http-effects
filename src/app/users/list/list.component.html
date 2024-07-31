@@ -1,10 +1,30 @@
-<div *ngFor="let user of users" class="card" style="width: 18rem;">
-  <img [src]="user.avatar" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"> {{ user.first_name }} {{ user.last_name }}</h5>
-    <p class="card-text">Some quick example text to build </p>
-    <p class="text-muted">
-      ID: {{ user.id }}
-    </p>
+<div *ngIf="loading"
+  class="alert alert-info text-center" role="alert">
+  <h4 class="alert-heading">Cargando</h4>
+  <p>
+    <i class="fa fa-sync fa-spin fa-2x"></i>
+  </p>
+  <p class="mb-0"></p>
+</div>
+
+<div *ngIf="error"
+  class="alert alert-danger text-center" role="alert">
+  <h4 class="alert-heading">Error</h4>
+  <p>
+    <i class="fa fa-sync fa-spin fa-2x"></i>
+  </p>
+  <p class="mb-0"></p>
+</div>
+
+<div class="card-columns">
+  <div class="row">
+    <div *ngFor="let user of usuarios" class="card mb-2 mx-2" style="width: 12rem">
+      <img [src]="user.avatar" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+        <p class="card-text">Some quick example text to build</p>
+        <p class="text-muted">ID: {{ user.id }}</p>
+      </div>
+    </div>
   </div>
 </div>
